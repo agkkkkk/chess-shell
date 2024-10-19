@@ -1,0 +1,13 @@
+[package]
+name = "chess-shell"
+version = "0.1.0"
+edition = "2021"
+description = "A terminal based chess game made in rust."
+keywords = ["chess"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.5.20", features = ["derive"] }
+dirs = "5.0.1"
+uci = "0.2.0"
