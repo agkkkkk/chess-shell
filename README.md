@@ -14,6 +14,7 @@ A Terminal based chess game built in rust.
 
 - clap
 - uci
+- ratatui
 
 ## Getting Started <a name = "getting_started"></a>
 
