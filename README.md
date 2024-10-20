@@ -3,8 +3,8 @@
 ## Table of Contents
 
 - [About](#about)
+- [Package Used](#package_used)
 - [Getting Started](#getting_started)
-- [Usage](#usage)
 
 ## About <a name = "about"></a>
 
@@ -12,9 +12,9 @@ A Terminal based chess game built in rust.
 
 ## Package Used <a name = "package_used"></a>
 
-- clap
-- uci
-- ratatui
+- clap => Command line argument Parser
+- uci => library to communicate with UCI compatible chess engine
+- ratatui => crate to create Terminal User Interface (TUI).
 
 ## Getting Started <a name = "getting_started"></a>
 
@@ -28,7 +28,3 @@ cd chess-tui
 cargo build --release
 ./target/release/chess-tui
 ```
-
-## Usage <a name = "usage"></a>
-
-Add notes about how to use the system.
