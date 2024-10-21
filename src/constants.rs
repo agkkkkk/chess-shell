@@ -1,8 +1,22 @@
 use std::path::PathBuf;
 
+use ratatui::style::Color;
+
+pub const UNDEFINED_POSITION: u8 = 255;
+pub const WHITE: Color = Color::Rgb(160, 160, 160);
+pub const BLACK: Color = Color::Rgb(128, 95, 69);
+
 pub enum DisplayMode {
     Default,
     ASCII,
+}
+
+#[derive(Debug, PartialEq)]
+pub enum Screen {
+    Home,
+    Default,
+    Bot,
+    Credit,
 }
 
 pub const TITLE: &str = r"

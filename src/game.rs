@@ -2,13 +2,15 @@ use std::error;
 
 use dirs::home_dir;
 
+use crate::board::Board;
+
 // Game result Type
 pub type GameResult<T> = std::result::Result<T, Box<dyn error::Error>>;
 
 // Game Struct
 pub struct Game {
     pub running: bool, // is game running
-    // pub board: Board,
+    pub board: Board,
     // pub screen: Screen,
     pub show_help: bool,                   // used to show popup help
     pub cursor: u8,                        // menu current cursor
@@ -19,6 +21,7 @@ impl Default for Game {
     fn default() -> Self {
         Self {
             running: true,
+            board: Board::default(),
             show_help: false,
             cursor: 0,
             chess_engine_path: None,

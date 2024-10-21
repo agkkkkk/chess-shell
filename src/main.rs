@@ -20,12 +20,14 @@ fn main() -> GameResult<()> {
     // let folder_path = home_dir.join("./config/chess-shell");
     // let config_path = home_dir.join(".config/chess-shell/config.toml");
 
+    let mut game = Game::default();
+
     // Initialize Terminal
     let terminal = ratatui::try_init()?;
 
     let mut tui = Tui::new(terminal);
 
-    tui.draw()?;
+    tui.draw(&mut game)?;
 
     Ok(())
 }
