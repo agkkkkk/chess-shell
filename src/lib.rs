@@ -15,3 +15,6 @@ pub mod tui;
 
 // Constants for the game
 pub mod constants;
+
+// utility function for the game
+pub mod utils;

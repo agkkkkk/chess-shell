@@ -1,6 +1,7 @@
 use crate::{
     constants::{DisplayMode, BLACK, UNDEFINED_POSITION, WHITE},
     pieces::{ChessPiece, PieceColor, PieceMove},
+    utils::get_chess_pieces,
 };
 
 use ratatui::{
@@ -48,6 +49,20 @@ impl Coordinate {
 
     pub fn is_valid(&self) -> bool {
         (0..8).contains(&self.row) && (0..8).contains(&self.col)
+    }
+}
+
+impl std::ops::Index<&Coordinate> for GameBoard {
+    type Output = Option<(ChessPiece, PieceColor)>;
+
+    fn index(&self, index: &Coordinate) -> &Self::Output {
+        &self[index.row as usize][index.col as usize]
+    }
+}
+
+impl std::ops::IndexMut<&Coordinate> for GameBoard {
+    fn index_mut(&mut self, index: &Coordinate) -> &mut Self::Output {
+        &mut self[index.row as usize][index.col as usize]
     }
 }
 
@@ -198,6 +213,11 @@ impl Board {
                 };
 
                 frame.render_widget(cell.clone(), square);
+
+                let coords = Coordinate::new(i, j);
+                let piece = get_chess_pieces(self, &coords, square);
+
+                frame.render_widget(piece, square);
             }
         }
     }
